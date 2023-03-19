@@ -127,7 +127,7 @@ Push '3' to Play
 """))
             if option == 1:
                 newtag = input('What would you like your new gamertag to be? ')
-                self.database.change_gamertag('users', gamertag, newtag)
+                self.database.change_gamertag(gamertag, newtag)
             elif option == 2:
                 self.database.delete_data(gamertag)
                 newtag = input('What would you like your new gamertag to be? ')
