@@ -128,9 +128,11 @@ Push '3' to Play
             if option == 1:
                 newtag = input('What would you like your new gamertag to be? ')
                 self.database.change_gamertag(gamertag, newtag)
+                gamertag = newtag
             elif option == 2:
                 self.database.delete_data(gamertag)
                 newtag = input('What would you like your new gamertag to be? ')
+                gamertag = newtag
                 self.database.add_data('users', newtag)
 
     # Function to start the program and house control function.
@@ -139,8 +141,8 @@ Push '3' to Play
         print("")
         print("Phrases are generated automatically.")
         print("")
-        gamertag = input('Please enter your gamertag: ')
-        if not self.is_user(gamertag):
-            self.database.add_data('users', gamertag)
-        self.menu(gamertag)
-        self.control(gamertag)
+        gamer = input('Please enter your gamertag: ')
+        if not self.is_user(gamer):
+            self.database.add_data('users', gamer)
+        self.menu(gamer)
+        self.control(gamer)

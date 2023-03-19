@@ -55,7 +55,7 @@ class Database:
         docs = self.get_data('puzzles')
         for doc in docs:
             dictionary = doc.to_dict()
-            p = dictionary['puzzles']
+            p = dictionary['puzzle']
             if puzzle == p:
                 puzzleId = doc.id
                 gamer = self.dataset.collection(u'users').document(gamerId).get()
